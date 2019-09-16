@@ -1,0 +1,16 @@
+
+%Crear una matriz A y un vector columna v
+A = [1 2; 3 4; 5 6; 7 8];
+v = [14; 16; 18; 20];
+
+%Mostramos los elementos creados
+%disp(A)
+%disp(v)
+
+%Matriz concatenada de A y v
+B = [A v];
+disp (B)
+
+len_B = size(B);
+vector_fila = [];
+for i = len_B()
