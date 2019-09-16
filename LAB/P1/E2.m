@@ -1,6 +1,6 @@
 
 %Crear una matriz cuadrada aleatoria
-len = input("Indique el tamaño de la matriz");
+len = input("Indique el tamaño de la matriz: ");
 matrix = rand (len);
 display (matrix)
 
@@ -25,11 +25,15 @@ for i = 1:len
     avg_vector = [avg_vector mean(matrix(i,:))];
     var_vector = [var_vector var(matrix(i,:))];
 end
-display(max_vector);
-display(min_vector);
-display(avg_vector);
-display(var_vector);
 
-xlabel('x')
-ylabel('sin(x)')
-title('Plot of the Sine Function')
+figure('Name', 'Grafica')
+hold on
+plot(1:len, max_vector)
+plot(1:len, min_vector)
+plot(1:len, avg_vector)
+plot(1:len, var_vector)
+xlabel('Filas')
+ylabel('Valores')
+legend('max', 'min', 'avg', 'var')
+title('PLOT')
+hold off
