@@ -14,7 +14,7 @@ for i = 1:len
     t_rank(i) = toc;
 end
 
-%Dibujamos una gráfica con los tiempos
+%
 figure('Name', 'Tiempos')
 hold on
 plot(1:len, t_det)

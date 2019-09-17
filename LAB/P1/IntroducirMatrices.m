@@ -12,6 +12,7 @@ else
     cols = Dimensiones;
 end
 Matriz = [];
+%Flag para rellenar a partir de aquí con números aleatorios
 random = 0;
     for i = 1:rows
         for j = 1:cols
