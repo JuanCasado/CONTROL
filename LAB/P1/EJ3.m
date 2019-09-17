@@ -46,7 +46,7 @@ display(B_r)
 
 %Producto valor a valor
 multiplied = [];
-if lenA(1) == lenB(2)
+if lenA(2) == lenB(1)
     for i = 1:lenA(1)
         for j = 1:lenB(2)
             acc = 0;
@@ -56,8 +56,16 @@ if lenA(1) == lenB(2)
             multiplied(i,j) = acc;
         end
     end
+    display(multiplied)
 else
-    display('Las matrices no pueden multiplicarse')
+    display('Las matrices no pueden multiplicarse elemento a elemento')
+end
+
+if lenA(2) == lenB(1)
+    multElemToElem = A*B;
+    display(multElemToElem)
+else
+    display('Las matrices no pueden multiplicarse matricialmente')
 end
 
 %Vector fila con la primera fila de cada matriz
@@ -67,6 +75,3 @@ display(v_fila)
 %Vector columnas con la primera columna de cada matriz
 v_columna = [A(:,1); B(:,1)];
 display(v_columna)
-
-
-
