@@ -1,11 +1,9 @@
 function [solucion, reales, complejas] = raices(poli_1, poli_2)
-action = input('Indique sobre que polinomio aplicar la operacion [1 2 3]: ');
-switch action
+%action = input('Indique sobre que polinomio aplicar la operacion [1 2 3]: ');
+switch nargin
     case 1
         solucion = roots(poli_1);
     case 2
-        solucion = roots(poli_2);
-    case 3
         solucion = [roots(poli_1); roots(poli_2)];
     otherwise
         error('valor introducido erroneo')
