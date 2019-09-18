@@ -1,7 +1,7 @@
 
 %Dar valores a la funcion
-x = -5:0.1:5;
-y = -5:0.1:5;
+x = -5:-0.1:-25;
+y = 5:-0.1:-15;
 [X,Y] = meshgrid(x,y);
 Z = Y * sin(pi*(X/10))+5*cos((X^2+Y^2)/8)+cos(X+Y)*cos(3*X-Y);
 
