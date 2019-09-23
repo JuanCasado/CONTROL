@@ -1,6 +1,6 @@
 
 %Dar valores a la funcion
-[X,Y] = meshgrid(-5:.05:5);
+[X,Y] = meshgrid(-5:.01:5);
 Z = Y * sin(pi*(X/10))+5*cos((X^2+Y^2)/8)+cos(X+Y)*cos(3*X-Y);
 
 %Crear las gráficas

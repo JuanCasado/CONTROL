@@ -13,8 +13,8 @@ for i = 1:lenRaiz
     end
 end
 
-hold on
 figure('Name',"Representacion de numeros complejos")
+hold on
 plot(vectorComplejo,'or','LineWidth',3)
 xlabel("Parte real")
 ylabel("Parte compleja")
