@@ -1,0 +1,7 @@
+syms f1(k);
+f1(k) = 2 + 5*k + k^2;
+transf1 = ztrans(f1);
+display(transf1)
+
+syms f2(k);
+f2(k)=sin(k)123
