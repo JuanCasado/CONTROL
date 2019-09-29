@@ -33,7 +33,7 @@ funcionTransferencia = tf(numerador,denominador,ts);
 [yEscalon, tEscalon]= step(funcionTransferencia);
 figure("Name","Grafica 3")
 hold on
-plot(yImpulso,tImpulso)
-plot(yEscalon, tEscalon)
+plot(tImpulso,yImpulso)
+plot(tEscalon,yEscalon)
 legend(["Respuesta impulso","Respuesta escalon"])
 hold off
