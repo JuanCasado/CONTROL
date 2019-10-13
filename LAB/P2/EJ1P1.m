@@ -15,6 +15,7 @@ net = configure(net,p,t);
 [net,a,e,pf] = train(net,p,t);
 
 %Ver los resultados
+figure
 plotpv(p, t)
 plotpc(net.iw{1,1}, net.b{1})
 view(net)
