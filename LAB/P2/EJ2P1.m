@@ -18,20 +18,13 @@ ylabel('Vector Target T');
 % ==================
 % DISEÑO DE LA RED 
 % ==================
-hiddenLayerSize = 4;
+hiddenLayerSize = 30;
 %1. trainrp
+%2. trainbr
 %2. trainlm
-%3. trainbr
 %4. trainbfg
 %5. traincgb
-%6. traincgf
-%7. traincgp
-%8. traingda
-%9. traingdm
-%10. traingdx
-%11. trainoss
-%12. trainscg
-net = fitnet(hiddenLayerSize,'trainbr');
+net = fitnet(hiddenLayerSize,'traincgb');
 %Dividir los datos
 net.divideParam.trainRatio = 70/100;
 net.divideParam.valRatio = 15/100;
