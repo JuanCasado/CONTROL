@@ -36,35 +36,19 @@ end
 inputs=[E_d_vec'; E_theta_vec'];
 targets=[V_vec'; W_vec'];
 
+net = feedforwardnet([15]);
+net = configure(net,inputs,targets);
+net.divideParam.trainRatio = 70/100;
+net.divideParam.valRatio = 15/100;
+net.divideParam.testRatio = 15/100;
 
-nNeuronas= 20;
-performanceAnterior = 100;
-netElegida = '';
+net = train(net,inputs,targets);
 
-for i=5:nNeuronas
-    net = feedforwardnet([i]);
-    net = configure(net,inputs,targets);
-    net.divideParam.trainRatio = 70/100;
-    net.divideParam.valRatio = 15/100;
-    net.divideParam.testRatio = 15/100;
+outputs = net(inputs);
+errors = gsubtract(outputs,targets);
+performance = perform(net,targets,outputs)
 
-    net = train(net,inputs,targets);
-
-    outputs = net(inputs);
-    errors = gsubtract(outputs,targets);
-    performance = perform(net,targets,outputs)
-    
-    if(performance < performanceAnterior)
-       netElegida = net;
-       performanceAnterior = performance;
-    end
-
-end
-
-view(netElegida)
-display(performance)
-
-gensim(netElegida,Ts);
+gensim(net,Ts);
 
 
 

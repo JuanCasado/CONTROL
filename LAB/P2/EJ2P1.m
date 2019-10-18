@@ -10,15 +10,15 @@ clear all; close all;
 t = -3:.1:3; % eje de tiempo
 F=sinc(t)+.001*randn(size(t)); % función que se desea aproximar
 
-plot(t,F,'+');
-title('Vectores de entrenamiento');
-xlabel('Vector de entrada P');
-ylabel('Vector Target T');
+%plot(t,F,'+');
+%title('Vectores de entrenamiento');
+%xlabel('Vector de entrada P');
+%ylabel('Vector Target T');
 
 % ==================
 % DISEÑO DE LA RED 
 % ==================
-hiddenLayerSize = 40;
+hiddenLayerSize = 4;
 %1. trainrp
 %2. trainbr
 %3. traingd
