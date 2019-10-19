@@ -7,8 +7,14 @@ y = con2seq(y); %outputs
 d1 = [1:2];
 d2 = [1:2];
 narx_net = narxnet(d1,d2,10);
+
+view(narx_net)
+
 narx_net.divideFcn = '';
 narx_net.trainParam.min_grad = 1e-10;
+
+
+
 [p,Pi,Ai,t] = preparets(narx_net,u,{},y); %prepares data for the training
 narx_net = train(narx_net,p,t,Pi);
 % Simulate the network

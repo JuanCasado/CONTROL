@@ -38,31 +38,38 @@ targets=[V_vec'; W_vec'];
 
 
 nNeuronas= 20;
-performanceAnterior = 100;
+performanceMejor = 100;
 netElegida = '';
+internal_performanceMejor = 100;
+internal_netElegida = '';
 
 for i=5:nNeuronas
-    net = feedforwardnet([i]);
-    net = configure(net,inputs,targets);
-    net.divideParam.trainRatio = 70/100;
-    net.divideParam.valRatio = 15/100;
-    net.divideParam.testRatio = 15/100;
+    for j= 1:5
+        net = feedforwardnet([i]);
+        net = configure(net,inputs,targets);
+        net.divideParam.trainRatio = 70/100;
+        net.divideParam.valRatio = 15/100;
+        net.divideParam.testRatio = 15/100;
 
-    net = train(net,inputs,targets);
+        net = train(net,inputs,targets);
 
-    outputs = net(inputs);
-    errors = gsubtract(outputs,targets);
-    performance = perform(net,targets,outputs)
-    
-    if(performance < performanceAnterior)
-       netElegida = net;
-       performanceAnterior = performance;
+        outputs = net(inputs);
+        errors = gsubtract(outputs,targets);
+        performance = perform(net,targets,outputs);
+        
+        if (performance < internal_performanceMejor)
+           internal_netElegida = net;
+           internal_performanceMejor = performance;
+        end
     end
-
+    if (internal_performanceMejor < performanceMejor)
+       netElegida = internal_netElegida;
+       performanceMejor = internal_performanceMejor;
+    end
 end
 
 view(netElegida)
-display(performance)
+display(performanceMejor)
 
 gensim(netElegida,Ts);
 

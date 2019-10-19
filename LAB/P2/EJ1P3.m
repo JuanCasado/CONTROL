@@ -16,7 +16,4 @@ outputsc = mat2cell(outputs, 1, ones(nT, 1));
 net = train(net,x,t,xi,ai);
 net = closeloop(net);
 
-gensim(net, Ts);
-
-
-
+%gensim(net, Ts);
