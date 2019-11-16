@@ -1,5 +1,5 @@
 [System]
-Name='Control_borroso'
+Name='Control_borroso_con_gaussianas'
 Type='mamdani'
 Version=2.0
 NumInputs=2
@@ -30,9 +30,9 @@ MF2='positivo_theta':'trimf',[0 3.15 5.775]
 Name='V'
 Range=[0 2]
 NumMFs=3
-MF1='pequeño_V':'trimf',[0 0 1]
+MF1='pequeño_V':'gaussmf',[0.2774 -0.05]
 MF2='mediano_V':'trimf',[0.1667 1 1.833]
-MF3='grande_V':'trimf',[1 2 2]
+MF3='grande_V':'gaussmf',[0.2774 2.05]
 
 [Output2]
 Name='W'
