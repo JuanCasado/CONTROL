@@ -32,18 +32,18 @@ MF4='muy_positivo_thetha':'gaussmf',[0.5 3]
 Name='V'
 Range=[0 2]
 NumMFs=4
-MF1='pequeño_V':'trimf',[0 0 0.6]
+MF1='pequeño_V':'gaussmf',[0.28 0.03]
 MF2='mediano_V':'trimf',[0.1667 1 1.833]
-MF3='grande_V':'gauss2mf',[0.25 1.7 0.001699 2]
-MF4='muy_pequeño_V':'gauss2mf',[0.34 -0.1 0.00294 0.0488288207567951]
+MF3='grande_V':'gaussmf',[0.28 1.95]
+MF4='muy_pequeño_V':'gauss2mf',[0.34 -0.1 0.157 0.0404269526628278]
 
 [Output2]
 Name='W'
 Range=[-1 1]
 NumMFs=3
-MF1='negativo_W':'trimf',[-1.833 -1 0]
+MF1='negativo_W':'gaussmf',[0.57 -0.992]
 MF2='zero_W':'trimf',[-0.8333 0 0.833]
-MF3='positivo_W':'trimf',[0 1 1.833]
+MF3='positivo_W':'gaussmf',[0.57 0.992]
 
 [Rules]
 0 1, 0 1 (1) : 1
