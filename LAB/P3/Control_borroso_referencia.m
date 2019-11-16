@@ -6,14 +6,11 @@ x0 = 0;
 y0 = 0;
 
 % Referencia x-y de posicion
-refx=-5;
-refy=7;
+refx=7;
+refy=0;
 % Ejecutar Simulacion
-<<<<<<< HEAD
-fis_name = 'Control_borroso_mejor_giro_con_gaussianas.fis';
-=======
+%fis_name = 'Control_borroso_oscilaciones.fis';
 fis_name = 'Control_borroso_gausianas.fis';
->>>>>>> 80f9143498b72e5ac0b89486b69d1e1b32a3ebb5
 sim('PositionControl_referencia.slx')
 % Mostrar
 x=salida_x.signals.values;
