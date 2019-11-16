@@ -23,8 +23,8 @@ MF3='grande_d':'trimf',[5 10 10]
 Name='E_theta'
 Range=[-3.15 3.15]
 NumMFs=2
-MF1='negativo_theta':'trimf',[-5.775 -3.15 0]
-MF2='positivo_theta':'trimf',[0 3.15 5.775]
+MF1='negativo_theta':'trimf',[-3.15 -3.15 0]
+MF2='positivo_theta':'trimf',[0 3.15 3.15]
 
 [Output1]
 Name='V'
@@ -38,9 +38,9 @@ MF3='grande_V':'gaussmf',[0.2774 2.05]
 Name='W'
 Range=[-1 1]
 NumMFs=3
-MF1='negativo_W':'trimf',[-1.833 -1 0]
-MF2='zero_W':'trimf',[-0.8333 0 0.833]
-MF3='positivo_W':'trimf',[0 1 1.833]
+MF1='negativo_W':'trimf',[-1 -1 0]
+MF2='zero_W':'trimf',[-1 0 1]
+MF3='positivo_W':'trimf',[0 1 1]
 
 [Rules]
 0 1, 0 1 (1) : 1
