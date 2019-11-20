@@ -8,9 +8,9 @@ y_0 = y0;
 th_0 = w0;
 
 % Ejecutar Simulacion
-%fis_name = 'Control_borroso_oscilaciones.fis';
+fis_name = 'Control_borroso_oscilaciones.fis';
 %fis_name = 'Control_borroso_gausianas.fis';
-fis_name = 'Control_borroso_con_gaussianas.fis';
+%fis_name = 'Control_borroso_con_gaussianas.fis';
 
 sim('PositionControl_trayectory.slx') 
 % Mostrar

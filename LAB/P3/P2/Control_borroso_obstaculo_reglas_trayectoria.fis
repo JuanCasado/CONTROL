@@ -1,5 +1,5 @@
 [System]
-Name='Control_borroso_obstaculo_reglas'
+Name='Control_borroso_obstaculo_reglas_trayectoria'
 Type='mamdani'
 Version=2.0
 NumInputs=4
@@ -25,15 +25,15 @@ Range=[-3.15 3.15]
 NumMFs=4
 MF1='negativo_theta':'trimf',[-5.775 -3.15 0]
 MF2='positivo_theta':'trimf',[0 3.15 5.775]
-MF3='muy_negativo_theta':'gaussmf',[0.5 -3]
-MF4='muy_positivo_thetha':'gaussmf',[0.5 3]
+MF3='muy_negativo_theta':'gaussmf',[0.5 -3.1415]
+MF4='muy_positivo_thetha':'gaussmf',[0.5 3.14159265358979]
 
 [Input3]
 Name='E_d_obs'
 Range=[0 10]
 NumMFs=2
-MF1='pequeña_d_obs':'trimf',[0 0 1]
-MF2='grande_d_obs':'trimf',[0 1 2]
+MF1='pequeña_d_obs':'trimf',[0 0 0.5]
+MF2='grande_d_obs':'trimf',[0 0.5 1]
 
 [Input4]
 Name='E_theta_obs'

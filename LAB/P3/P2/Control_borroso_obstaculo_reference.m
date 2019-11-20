@@ -1,17 +1,17 @@
 %Tiempo de muestreo
 Ts=100e-3;
-error_margin = 0.02;
-w0 = 0;
+error_margin = 0.05;
+w0 = pi/2;
 x0 = 0;
 y0 = 0;
 
 % Referencia x-y de posicion
-refx=-7;
-refy=0;
-obsx=-3;
-obsy=-6;
+refx=0;
+refy=3;
+obsx=0;
+obsy=0.1;
 % Ejecutar Simulacion
-fis_name = 'Control_borroso_obstaculo_reglas.fis';
+fis_name = 'Control_borroso_obstaculo_reglas_2.fis';
 sim('PositionControl_referencia_obs.slx')
 % Mostrar
 x=salida_x.signals.values;
