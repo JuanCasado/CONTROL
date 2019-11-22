@@ -1,5 +1,5 @@
 [System]
-Name='Control_borroso'
+Name='Control_borroso2'
 Type='mamdani'
 Version=2.0
 NumInputs=2
