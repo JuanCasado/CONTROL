@@ -6,10 +6,10 @@ x0 = 0;
 y0 = 0;
 
 % Referencia x-y de posicion
-refx=0;
-refy=3;
-obsx=0;
-obsy=0.1;
+refx=-4;
+refy=-4;
+obsx=-0.5;
+obsy=1.5;
 % Ejecutar Simulacion
 fis_name = 'Control_borroso_obstaculo_reglas_2.fis';
 sim('PositionControl_referencia_obs.slx')
