@@ -25,4 +25,5 @@ plot(x,y, '-b')
 plot(x_ref, y_ref, '-r')
 plot(x0,y0, 'or')
 plot(x_0,y_0, 'oy')
+grid on
 hold off
