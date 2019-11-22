@@ -1,0 +1,79 @@
+[System]
+Name='Control_borroso_obstaculo_reglas'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=2
+NumRules=14
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='E_d'
+Range=[0 10]
+NumMFs=3
+MF1='pequeño_d':'trimf',[0 0 5]
+MF2='mediano_d':'trimf',[0.8333 5 9.167]
+MF3='grande_d':'trimf',[5 10 10]
+
+[Input2]
+Name='E_theta'
+Range=[-3.15 3.15]
+NumMFs=4
+MF1='negativo_theta':'trimf',[-5.775 -3.15 0]
+MF2='positivo_theta':'trimf',[0 3.15 5.775]
+MF3='muy_negativo_theta':'gaussmf',[0.5 -3]
+MF4='muy_positivo_thetha':'gaussmf',[0.5 3]
+
+[Input3]
+Name='E_d_obs'
+Range=[0 10]
+NumMFs=2
+MF1='pequeña_d_obs':'trimf',[0 0 1]
+MF2='grande_d_obs':'trimf',[0 1 2]
+
+[Input4]
+Name='E_theta_obs'
+Range=[-3.15 3.15]
+NumMFs=5
+MF1='negativo_detras_theta_obs':'trimf',[-3.15 -2 -1]
+MF2='positivo_theta_obs_detras':'trimf',[1 2 3.15]
+MF3='negativo_delante_theta_obs':'trimf',[-2 -1 0.1]
+MF4='positivo_delante_theta_obs':'trimf',[-0.1 1 2]
+MF5='zero_theta_obs':'trimf',[-0.01 0 0.01]
+
+[Output1]
+Name='V'
+Range=[0 2]
+NumMFs=4
+MF1='pequeño_V':'gaussmf',[0.28 0.03]
+MF2='mediano_V':'trimf',[0.1667 1 1.833]
+MF3='grande_V':'gaussmf',[0.28 1.95]
+MF4='muy_pequeño_V':'gauss2mf',[0.34 -0.1 0.157 0.0404269526628278]
+
+[Output2]
+Name='W'
+Range=[-1 1]
+NumMFs=3
+MF1='negativo_W':'gaussmf',[0.57 -0.992]
+MF2='zero_W':'trimf',[-0.8333 0 0.833]
+MF3='positivo_W':'gaussmf',[0.57 0.992]
+
+[Rules]
+0 1 0 0, 0 1 (1) : 1
+0 2 0 0, 0 3 (1) : 1
+1 0 0 0, 1 0 (1) : 1
+2 0 0 0, 2 0 (1) : 1
+3 0 0 0, 3 0 (1) : 1
+0 3 0 0, 4 1 (1) : 1
+0 4 0 0, 4 3 (1) : 1
+0 0 1 4, 4 1 (1) : 1
+0 0 2 4, 1 1 (1) : 1
+0 0 1 3, 4 3 (1) : 1
+0 0 2 3, 1 3 (1) : 1
+0 0 1 2, 1 3 (1) : 1
+0 0 1 1, 1 1 (1) : 1
+0 0 0 5, 4 1 (1) : 1
