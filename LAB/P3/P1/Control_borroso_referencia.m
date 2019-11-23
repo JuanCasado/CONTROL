@@ -6,10 +6,10 @@ y0 = 0;
 w0 = 0;
 
 % Referencia x-y de posicion
-refx= -5;
-refy= 0;
+refx= 5;
+refy= 5;
 % Ejecutar Simulacion
-fis_name = 'Control_borroso.fis';
+fis_name = 'Control_borroso_oscilaciones.fis';
 sim('PositionControl_referencia.slx')
 % Mostrar
 x=salida_x.signals.values;

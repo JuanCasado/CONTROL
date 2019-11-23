@@ -12,7 +12,7 @@ obsx=0;
 obsy=0;
 
 % Ejecutar Simulacion
-fis_name = 'Control_borroso_obstaculo_reglas_trayectoria.fis';
+fis_name = 'Control_borroso_obs.fis';
 
 sim('PositionControl_trajectory_obs.slx') 
 % Mostrar
