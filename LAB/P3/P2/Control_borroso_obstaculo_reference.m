@@ -8,10 +8,10 @@ y0 = 0;
 % Referencia x-y de posicion
 refx=-4;
 refy=-4;
-obsx=-0.5;
-obsy=1.5;
+obsx=-2.25;
+obsy= 2;
 % Ejecutar Simulacion
-fis_name = 'Control_borroso_obstaculo_reglas_2.fis';
+fis_name = 'Control_borroso_gaussianas_obs.fis';
 sim('PositionControl_referencia_obs.slx')
 % Mostrar
 x=salida_x.signals.values;
