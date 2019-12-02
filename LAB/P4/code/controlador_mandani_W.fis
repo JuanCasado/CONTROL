@@ -1,0 +1,30 @@
+[System]
+Name='controlador_mandani_W'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e_sonar'
+Range=[-5 5]
+NumMFs=2
+MF1='negativo':'trapmf',[-5 -5 -2 0.75]
+MF2='positivo':'trapmf',[-0.75 2 5 5]
+
+[Output1]
+Name='W'
+Range=[-3.15 3.15]
+NumMFs=2
+MF1='negativo':'trapmf',[-3.15 -3.15 -0.75 0]
+MF2='positivo':'trapmf',[0 0.75 3.15 3.15]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
