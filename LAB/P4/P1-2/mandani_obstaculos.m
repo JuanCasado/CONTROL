@@ -11,7 +11,7 @@ offset_obs2 =  0; %Sonar1-Sonar4
 arround_th = 0.1;
 
 % Ejecutar Simulacion
-sim('controlador_mandani.slx') 
+sim('controlador_mandani_obstaculos.slx') 
 
 
 %% Mostrar

@@ -1,0 +1,66 @@
+[System]
+Name='controlador_mandani_obstaculos'
+Type='mamdani'
+Version=2.0
+NumInputs=5
+NumOutputs=1
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e_sonar0'
+Range=[-5 5]
+NumMFs=2
+MF1='negativo':'trapmf',[-5.25 -3.25 -2 1]
+MF2='positivo':'trapmf',[-0.75 2 3.25 5.25]
+
+[Input2]
+Name='e_sonar1'
+Range=[-5 5]
+NumMFs=2
+MF1='negativo':'trapmf',[-5.25 -3.25 -2 1]
+MF2='positivo':'trapmf',[-0.75 2 3.25 5.25]
+
+[Input3]
+Name='e_sonar2'
+Range=[-5 5]
+NumMFs=2
+MF1='negativo':'trapmf',[-5.25 -3.25 -2 1]
+MF2='positivo':'trapmf',[-0.75 2 3.25 5.25]
+
+[Input4]
+Name='e_sonar_obs1'
+Range=[-5 5]
+NumMFs=2
+MF1='negativo':'trapmf',[-5.25 -3.25 -2 1]
+MF2='positivo':'trapmf',[-0.75 2 3.25 5.25]
+
+[Input5]
+Name='e_sonar_obs2'
+Range=[-5 5]
+NumMFs=2
+MF1='negativo':'trapmf',[-5.25 -3.25 -2 1]
+MF2='positivo':'trapmf',[-0.75 2 3.25 5.25]
+
+[Output1]
+Name='W'
+Range=[-3.15 3.15]
+NumMFs=2
+MF1='negativo':'trapmf',[-3.15 -3.15 -0.75 0]
+MF2='positivo':'trapmf',[0 0.75 3.15 3.15]
+
+[Rules]
+1 0 0 0 0, 1 (1) : 1
+2 0 0 0 0, 2 (1) : 1
+0 1 0 0 0, 1 (1) : 1
+0 2 0 0 0, 2 (1) : 1
+0 0 1 0 0, 2 (1) : 1
+0 0 2 0 0, 1 (1) : 1
+0 0 0 2 0, 2 (1) : 1
+0 0 0 1 0, 1 (1) : 1
+0 0 0 0 2, 2 (1) : 1
+0 0 0 0 1, 1 (1) : 1
