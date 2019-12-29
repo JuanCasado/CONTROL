@@ -1,5 +1,5 @@
 [System]
-Name='controlador_mandani_obstaculos'
+Name='controlador_mamdani_obstaculos'
 Type='mamdani'
 Version=2.0
 NumInputs=5

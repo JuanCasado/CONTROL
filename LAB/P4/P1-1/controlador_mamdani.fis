@@ -1,5 +1,5 @@
 [System]
-Name='controlador_mandani_3'
+Name='controlador_mamdani'
 Type='mamdani'
 Version=2.0
 NumInputs=3

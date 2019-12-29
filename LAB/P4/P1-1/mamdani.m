@@ -1,7 +1,7 @@
 
 rosshutdown
 clear all
-controller_name = 'controlador_mandani_3.fis';
+controller_name = 'controlador_mamdani.fis';
 Ts=100e-3;
 vel = 1;
 offset_0 = -1.6000;
@@ -10,7 +10,7 @@ offset_2 =  -0.2600;
 arround_th = 0.01;
 
 % Ejecutar Simulacion
-sim('controlador_mandani.slx') 
+sim('controlador_mamdani.slx') 
 
 %% Sonars
 sonar0_ = sonar0.signals.values;
@@ -41,4 +41,4 @@ train = double(train);
 
 
 %%
-save train train
+save train.dat train -ascii

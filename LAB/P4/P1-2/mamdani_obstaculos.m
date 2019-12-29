@@ -1,7 +1,6 @@
 
 rosshutdown
-controller_name = 'controlador_mandani_obstaculos.fis';
-%controller_name = 'sugeno_controller.fis';
+controller_name = 'controlador_mamdani_obstaculos.fis';
 Ts=100e-3;
 vel = 1;
 offset_0 = -0.2;         %Sonar0-Sonar5
@@ -12,7 +11,7 @@ offset_obs2 =  -0.06;    %Sonar1-Sonar4
 arround_th = 0.01;
 
 % Ejecutar Simulacion
-sim('controlador_mandani_obstaculos.slx')
+sim('controlador_mamdani_obstaculos.slx')
 
 
 %% Mostrar
