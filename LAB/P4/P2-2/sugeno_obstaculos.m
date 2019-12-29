@@ -1,5 +1,5 @@
 rosshutdown
-controller_name = 'fake_controller.fis';
+controller_name = 'controlador_sugeno_obstaculos.fis';
 Ts=100e-3;
 vel = 1;
 gain = 1;
@@ -10,16 +10,16 @@ offset_obs1 =  1.82;     %Sonar2-Sonar3
 offset_obs2 =  -0.06;    %Sonar1-Sonar4
 arround_th = 0.01;
 
-saturation1_high = 5;
-saturation1_low = -5;
-saturation2_high = 5;
-saturation2_low = -5;
-saturation3_high = 5;
-saturation3_low = -5;
-saturation4_high = 5;
+saturation1_high = 1.27;
+saturation1_low = -1.39;
+saturation2_high = 4.53;
+saturation2_low = -4.47;
+saturation3_high = 3.31;
+saturation3_low = -2.01;
+saturation4_high = 2.37;
 saturation4_low = -5;
-saturation5_high = 5;
-saturation5_low = -5;
+saturation5_high = 4.71;
+saturation5_low = -3.57;
 
 % Ejecutar Simulacion
 sim('controlador_sugeno_obstaculos.slx')
@@ -73,14 +73,16 @@ load all_dataMapa2.dat;
 
 all_data = [all_dataMapa1 ; all_dataMapa2];
 
-[m,n] = size(all_data);
-percentage = 0.70;
-idx = randperm(m);
-train = all_data(idx(1:round(percentage*m)),:); 
-validation = all_data(idx(round(percentage*m)+1:end),:);
+save all_dataTrain.dat all_data -ascii
 
-save train.dat train -ascii;
-save validation.dat validation -ascii;
+% [m,n] = size(all_data);
+% percentage = 0.70;
+% idx = randperm(m);
+% train = all_data(idx(1:round(percentage*m)),:); 
+% validation = all_data(idx(round(percentage*m)+1:end),:);
+% 
+% save train.dat train -ascii;
+% save validation.dat validation -ascii;
 
 
 
