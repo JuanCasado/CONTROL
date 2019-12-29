@@ -12,7 +12,7 @@ arround_th = 0.01;
 % Ejecutar Simulacion
 sim('controlador_mamdani_sinobs.slx') 
 
-%%
+
 %% Mostrar
 x_=x.signals.values;
 y_=y.signals.values;
@@ -30,9 +30,8 @@ figure("Name", "e_sonar0");plot(e_sonar0_);
 figure("Name", "e_sonar1");plot(e_sonar1_);
 figure("Name", "e_sonar2");plot(e_sonar2_);
 
+
 %% Sonars
-
-
 e_sonar0_ = e_sonar0.signals.values;
 e_sonar1_ = e_sonar1.signals.values;
 e_sonar2_ = e_sonar2.signals.values;
