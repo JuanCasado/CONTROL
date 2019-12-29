@@ -64,25 +64,5 @@ e_sonar_obs1_(isinf(e_sonar_obs1_)) = 5.0;
 all_data = [e_sonar0_ e_sonar1_ e_sonar2_ e_sonar_obs0_ e_sonar_obs1_ out_];
 all_data = double(all_data);
 
-save all_dataMapa2.dat all_data -ascii
-
-
-%%
-load all_dataMapa1.dat;
-load all_dataMapa2.dat;
-
-all_data = [all_dataMapa1 ; all_dataMapa2];
-
 save all_dataTrain.dat all_data -ascii
-
-% [m,n] = size(all_data);
-% percentage = 0.70;
-% idx = randperm(m);
-% train = all_data(idx(1:round(percentage*m)),:); 
-% validation = all_data(idx(round(percentage*m)+1:end),:);
-% 
-% save train.dat train -ascii;
-% save validation.dat validation -ascii;
-
-
 
