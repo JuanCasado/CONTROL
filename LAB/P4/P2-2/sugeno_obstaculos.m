@@ -1,6 +1,5 @@
-
 rosshutdown
-controller_name = 'sugeno_controller.fis';
+controller_name = 'fake_controller.fis';
 Ts=100e-3;
 vel = 1;
 gain = 1;
@@ -11,16 +10,16 @@ offset_obs1 =  1.82;     %Sonar2-Sonar3
 offset_obs2 =  -0.06;    %Sonar1-Sonar4
 arround_th = 0.01;
 
-saturation1_high = 1.21;
-saturation1_low = -1.39;
-saturation2_high = 4.45;
-saturation2_low = -4.17;
-saturation3_high = 2.81;
-saturation3_low = -2.61;
-saturation4_high = 2.25;
-saturation4_low = -5.19;
-saturation5_high = 4.53;
-saturation5_low = -1.91;
+saturation1_high = 5;
+saturation1_low = -5;
+saturation2_high = 5;
+saturation2_low = -5;
+saturation3_high = 5;
+saturation3_low = -5;
+saturation4_high = 5;
+saturation4_low = -5;
+saturation5_high = 5;
+saturation5_low = -5;
 
 % Ejecutar Simulacion
 sim('controlador_sugeno_obstaculos.slx')
@@ -65,27 +64,23 @@ e_sonar_obs1_(isinf(e_sonar_obs1_)) = 5.0;
 all_data = [e_sonar0_ e_sonar1_ e_sonar2_ e_sonar_obs0_ e_sonar_obs1_ out_];
 all_data = double(all_data);
 
-%%
+save all_dataMapa2.dat all_data -ascii
 
-test = [];
-train = [];
-validation = [];
-for i = 1:size(all_data, 1)
-    mod_i = mod(i, 100);
-    if mod_i < 70
-        train = [train; all_data(i,:)];
-    elseif mod_i < 85
-        test = [test; all_data(i,:)];
-    else
-        validation = [validation; all_data(i,:)];
-    end
-end
 
 %%
-%save test test
-%save train train
-%save validation validation
+load all_dataMapa1.dat;
+load all_dataMapa2.dat;
 
-all_data2 = all_data;
-save all_data2
+all_data = [all_dataMapa1 ; all_dataMapa2];
+
+[m,n] = size(all_data);
+percentage = 0.70;
+idx = randperm(m);
+train = all_data(idx(1:round(percentage*m)),:); 
+validation = all_data(idx(round(percentage*m)+1:end),:);
+
+save train.dat train -ascii;
+save validation.dat validation -ascii;
+
+
 
