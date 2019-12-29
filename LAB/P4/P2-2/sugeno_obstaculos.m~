@@ -1,8 +1,8 @@
 
 rosshutdown
-controller_name = 'sugeno_controller.fis';
+controller_name = 'des.fis';
 Ts=100e-3;
-vel = 1;
+vel = 0.8;
 gain = 1;
 offset_0 = -0.2;         %Sonar0-Sonar5
 offset_1 = -0.22;        %Sonar1-Sonar7
@@ -10,17 +10,6 @@ offset_2 =  -0.18;       %Sonar4-Sonar6
 offset_obs1 =  1.82;     %Sonar2-Sonar3
 offset_obs2 =  -0.06;    %Sonar1-Sonar4
 arround_th = 0.01;
-
-saturation1_high = 1.21;
-saturation1_low = -1.39;
-saturation2_high = 4.45;
-saturation2_low = -4.17;
-saturation3_high = 2.81;
-saturation3_low = -2.61;
-saturation4_high = 2.25;
-saturation4_low = -5.19;
-saturation5_high = 4.53;
-saturation5_low = -1.91;
 
 % Ejecutar Simulacion
 sim('controlador_sugeno_obstaculos.slx')
