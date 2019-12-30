@@ -9,7 +9,7 @@ offset_2 =  -0.2600;
 arround_th = 0.01;
 
 saturation1_high = 0.17;
-saturation1_low = -0.0100;
+saturation1_low = 0;
 saturation2_high = 0.05;
 saturation2_low = -0.05;
 saturation3_high = 0.09;

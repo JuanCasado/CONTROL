@@ -9,21 +9,21 @@ offset_2 =  -0.2600;
 arround_th = 0.01;
 
 saturation1_high = 0.17;
-saturation1_low = -0.0100;
+saturation1_low = 0;
 saturation2_high = 0.05;
 saturation2_low = -0.05;
 saturation3_high = 0.09;
 saturation3_low = -0.09;
 
 saturation1_high_lineal = 0.17;
-saturation1_low_lineal = -0.0100;
+saturation1_low_lineal = 0;
 saturation2_high_lineal = 0.05;
 saturation2_low_lineal = -0.09;
 saturation3_high_lineal = 0.17;
 saturation3_low_lineal = -0.09;
 
 % Ejecutar Simulacion
-sim('controlador_sugeno_sinobs.slx')
+sim('controlador_sugeno_sinobs_velocidad.slx')
 
 %% Mostrar
 x_=x.signals.values;
