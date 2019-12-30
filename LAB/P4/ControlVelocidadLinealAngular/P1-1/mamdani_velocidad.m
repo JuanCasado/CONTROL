@@ -3,7 +3,6 @@ rosshutdown
 clear all
 controller_name = 'controlador_mamdani_velocidad.fis';
 Ts=100e-3;
-vel = 1;
 offset_0 = -1.6000;
 offset_1 = -0.1000;
 offset_2 =  -0.2600;
@@ -39,13 +38,13 @@ e_sonar0_ = e_sonar0.signals.values;
 e_sonar1_ = e_sonar1.signals.values;
 e_sonar2_ = e_sonar2.signals.values;
 out_ = post_format.signals.values;
-
+velocidad_ = velocidad.signals.values;
 
 e_sonar0_(isinf(e_sonar0_)) = 5.0;
 e_sonar1_(isinf(e_sonar1_)) = 5.0;
 e_sonar2_(isinf(e_sonar2_)) = 5.0;
 
-train = [e_sonar0_ e_sonar1_ e_sonar2_ out_];
+train = [e_sonar0_ e_sonar1_ e_sonar2_ velocidad_];
 train = double(train);
 
-save train.dat train -ascii
+save trainVelocidad.dat train -ascii

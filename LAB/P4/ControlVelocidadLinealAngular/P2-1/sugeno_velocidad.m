@@ -1,8 +1,8 @@
 rosshutdown
-controller_name = 'controlador_sugeno.fis';
+controller_name = 'controlador_sugeno_angular.fis';
+controller_name_lineal = 'controlador_sugeno_lineal.fis';
 
 Ts=100e-3;
-vel = 1;
 offset_0 = -1.6000;
 offset_1 = -0.1000;
 offset_2 =  -0.2600;
@@ -15,6 +15,13 @@ saturation2_low = -0.05;
 saturation3_high = 0.09;
 saturation3_low = -0.09;
 
+saturation1_high_lineal = 0.17;
+saturation1_low_lineal = -0.0100;
+saturation2_high_lineal = 0.05;
+saturation2_low_lineal = -0.09;
+saturation3_high_lineal = 0.17;
+saturation3_low_lineal = -0.09;
+
 % Ejecutar Simulacion
 sim('controlador_sugeno_sinobs.slx')
 
@@ -22,7 +29,11 @@ sim('controlador_sugeno_sinobs.slx')
 x_=x.signals.values;
 y_=y.signals.values;
 out_ = post_format.signals.values;
+velocidad_ = velocidad.signals.values;
+
 figure("Name", "Angular Velocity");plot(out_)
+figure("Name", "Lineal Velocity");plot(velocidad_)
+
 len = min(size(x_,1), size(y_,1));
 figure("Name", "Trajectory");plot(x_(1:len),y_(1:len))
 

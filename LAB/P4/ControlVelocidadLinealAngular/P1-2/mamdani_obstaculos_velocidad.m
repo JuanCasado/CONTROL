@@ -2,7 +2,6 @@
 rosshutdown
 controller_name = 'controlador_mamdani_obstaculos_velocidad.fis';
 Ts=100e-3;
-vel = 1;
 offset_0 = -0.2;         %Sonar0-Sonar5
 offset_1 = -0.22;        %Sonar1-Sonar7
 offset_2 =  -0.18;       %Sonar4-Sonar6

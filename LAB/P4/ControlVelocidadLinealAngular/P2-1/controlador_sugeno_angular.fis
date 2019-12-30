@@ -1,5 +1,5 @@
 [System]
-Name='controlador_sugeno'
+Name='controlador_sugeno_angular'
 Type='sugeno'
 Version=2.0
 NumInputs=3
