@@ -46,23 +46,3 @@ figure("Name", "e_sonar2");plot(e_sonar2_);
 figure("Name", "e_sonar_obs0");plot(e_sonar_obs0_);
 figure("Name", "e_sonar_obs1");plot(e_sonar_obs1_);
 
-%% Sonars
-
-e_sonar0_ = e_sonar0.signals.values;
-e_sonar1_ = e_sonar1.signals.values;
-e_sonar2_ = e_sonar2.signals.values;
-e_sonar_obs0_ = e_sonar_obs0.signals.values;
-e_sonar_obs1_ = e_sonar_obs1.signals.values;
-out_ = post_format.signals.values;
-
-e_sonar0_(isinf(e_sonar0_)) = 5.0;
-e_sonar1_(isinf(e_sonar1_)) = 5.0;
-e_sonar2_(isinf(e_sonar2_)) = 5.0;
-e_sonar_obs0_(isinf(e_sonar_obs0_)) = 5.0;
-e_sonar_obs1_(isinf(e_sonar_obs1_)) = 5.0;
-
-all_data = [e_sonar0_ e_sonar1_ e_sonar2_ e_sonar_obs0_ e_sonar_obs1_ out_];
-all_data = double(all_data);
-
-save all_dataTrain.dat all_data -ascii
-
